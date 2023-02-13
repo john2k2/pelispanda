@@ -22,7 +22,7 @@ export const HeaderStyled = styled.header`
   align-items: center;
   max-width: 1200px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     justify-content: space-between;
     ul {
       display: none;
@@ -38,7 +38,7 @@ export const HeaderNav = styled.nav`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: hidden;
 
   img {
     height: 2em;
@@ -51,22 +51,21 @@ export const HeaderNav = styled.nav`
   }
 `;
 export const HeaderUl = styled.ul`
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    position: absolute;
-    top: 6.2rem;
+    position: fixed;
+    top: 6rem;
     right: 0;
-    width: 305px;
-    bottom: 0;
+    width: 50%;
     height: 100vh;
-    background-color: #28282d;
+    background-color: #2b2b31;
     z-index: 1;
-    box-sizing: border-box;
-    transition: 0.4s ease;
+    transition: all 0.3s ease-in-out;
     transform: ${(props) =>
-      props.menu ? "translateX(0)" : "translateX(200%)"};
+      props.menu ? "translateX(0)" : "translateX(100%)"};
     padding: 30px 30px 0;
   }
   li {
@@ -93,7 +92,7 @@ export const HeaderUl = styled.ul`
 export const Containericon = styled.div`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: block;
     margin: 0 1em;
     padding: 0;
@@ -144,13 +143,10 @@ export const Input = styled.div`
     font-family: "Open Sans", sans-serif;
     margin: 0 auto;
     padding: 0 130px 0 50px;
-    &::placeholder {
-    }
   }
   button {
     height: 40px;
     width: 110px;
-
     right: 50px;
     -webkit-border-radius: 4px;
     border-radius: 5px;
