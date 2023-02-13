@@ -57,7 +57,7 @@ export const HeaderUl = styled.ul`
     justify-content: flex-start;
     align-items: center;
     position: fixed;
-    top: 6rem;
+    top: 6.3em;
     right: 0;
     width: 50%;
     height: 100vh;
@@ -67,6 +67,7 @@ export const HeaderUl = styled.ul`
     transform: ${(props) =>
       props.menu ? "translateX(0)" : "translateX(100%)"};
     padding: 30px 30px 0;
+    border-top: #ff55a5 2px solid;
   }
   li {
     margin: 0;
