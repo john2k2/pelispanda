@@ -8,42 +8,32 @@ import {
   Input,
   Container,
   InputContainer,
+  HeaderNav,
+  HeaderUl,
 } from "../StyleComponent/Header";
 
 const Header = () => {
   const [show, setShow] = useState(false);
+  const [menu, setMenu] = useState(false);
 
   const handleClick = () => {
     setShow(!show);
+  };
+  const handleMenu = () => {
+    setMenu(!menu);
   };
 
   return (
     <Container>
       <HeaderStyled>
-        <a href="#">
-          <img
-            src="https://pelispanda.re/wp-content/uploads/2020/07/panda1.png"
-            alt="pelispanda"
-          />
-        </a>
-        <Containericon>
-          <AiOutlineSearch
-            onClick={handleClick}
-            style={{
-              fontSize: "2rem",
-              color: "white",
-              cursor: "pointer",
-            }}
-          />
-          <AiOutlineMenu
-            style={{
-              fontSize: "2rem",
-              color: "white",
-              cursor: "pointer",
-              marginLeft: "1rem",
-            }}
-          />
-          <ul>
+        <HeaderNav>
+          <a href="#">
+            <img
+              src="https://pelispanda.re/wp-content/uploads/2020/07/panda1.png"
+              alt="pelispanda"
+            />
+          </a>
+          <HeaderUl menu={menu}>
             <li>
               <a href="#">peliculas</a>
             </li>
@@ -59,8 +49,36 @@ const Header = () => {
             <li>
               <a href="#">calidad</a>
             </li>
-          </ul>
+          </HeaderUl>
+        </HeaderNav>
+        <Containericon>
+          <AiOutlineSearch
+            onClick={handleClick}
+            style={{
+              fontSize: "2rem",
+              color: "white",
+              cursor: "pointer",
+            }}
+          />
+          <AiOutlineMenu
+            onClick={handleMenu}
+            style={{
+              fontSize: "2rem",
+              color: "white",
+              cursor: "pointer",
+              marginLeft: "1rem",
+            }}
+          />
         </Containericon>
+        <AiOutlineSearch
+          className="search"
+          onClick={handleClick}
+          style={{
+            fontSize: "2rem",
+            color: "white",
+            cursor: "pointer",
+          }}
+        />
       </HeaderStyled>
       <InputContainer show={show}>
         <Input>
