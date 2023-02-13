@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const HeaderStyled = styled.header`
   background-color: #2b2b31;
   height: 100px;
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   padding: 0;
   display: flex;
@@ -55,11 +55,11 @@ export const HeaderUl = styled.ul`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     position: fixed;
     top: 6.3em;
     right: 0;
-    width: 50%;
+    width: 35%;
     height: 100vh;
     background-color: #2b2b31;
     z-index: 1;
@@ -68,6 +68,7 @@ export const HeaderUl = styled.ul`
       props.menu ? "translateX(0)" : "translateX(100%)"};
     padding: 30px 30px 0;
     border-top: #ff55a5 2px solid;
+    text-transform: uppercase;
   }
   li {
     margin: 0;
@@ -86,6 +87,10 @@ export const HeaderUl = styled.ul`
       padding: 1em 2em;
       box-sizing: border-box;
       transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: #ff55a5;
+      }
     }
   }
 `;
@@ -114,18 +119,19 @@ export const InputContainer = styled.div`
   z-index: 1;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
   transform: ${(props) =>
     props.show ? "translateY(6.2rem)" : "translateY(0)"};
+  opacity: ${(props) => (props.show ? "1" : "0")};
   z-index: -1;
 `;
 
 export const Input = styled.div`
   display: flex;
   align-items: center;
-  position: absolute;
-  width: 90%;
-  margin: auto;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
   height: 60px;
   max-width: 1200px;
 
@@ -133,7 +139,6 @@ export const Input = styled.div`
     width: 100%;
     height: 60px;
     border: none;
-    padding: 0 1em;
     box-sizing: border-box;
     outline: none;
     background-color: #28282d;
@@ -148,7 +153,6 @@ export const Input = styled.div`
   button {
     height: 40px;
     width: 110px;
-    right: 50px;
     -webkit-border-radius: 4px;
     border-radius: 5px;
     background-image: -moz-linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
