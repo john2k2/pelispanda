@@ -56,7 +56,7 @@ const Header = () => {
             onClick={handleClick}
             style={{
               fontSize: "2rem",
-              color: "white",
+              color: "rgba(255,255,255,0.75)",
               cursor: "pointer",
             }}
           />
@@ -64,7 +64,7 @@ const Header = () => {
             onClick={handleMenu}
             style={{
               fontSize: "2rem",
-              color: "white",
+              color: "rgba(255,255,255,0.75)",
               cursor: "pointer",
               marginLeft: "1rem",
             }}
@@ -75,7 +75,7 @@ const Header = () => {
           onClick={handleClick}
           style={{
             fontSize: "2rem",
-            color: "white",
+            color: "rgba(255,255,255,0.75)",
             cursor: "pointer",
           }}
         />

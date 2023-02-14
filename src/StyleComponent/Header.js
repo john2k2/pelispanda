@@ -21,9 +21,11 @@ export const HeaderStyled = styled.header`
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
+  z-index: 190;
 
   @media (max-width: 1024px) {
     justify-content: space-between;
+    max-width: 1000px;
     ul {
       display: none;
     }
@@ -79,14 +81,15 @@ export const HeaderUl = styled.ul`
     a {
       display: block;
       text-decoration: none;
-      color: #fff;
+      color: rgba(255, 255, 255, 0.75);
       font-size: 1em;
-      font-weight: 500;
       letter-spacing: 0.5px;
       font-family: "Open Sans", sans-serif;
       padding: 1em 2em;
       box-sizing: border-box;
       transition: all 0.3s ease-in-out;
+      text-transform: uppercase;
+      font-weight: 300;
 
       &:hover {
         color: #ff55a5;
@@ -123,7 +126,7 @@ export const InputContainer = styled.div`
   transform: ${(props) =>
     props.show ? "translateY(6.2rem)" : "translateY(0)"};
   opacity: ${(props) => (props.show ? "1" : "0")};
-  z-index: -1;
+  z-index: 1;
 `;
 
 export const Input = styled.div`
@@ -134,6 +137,10 @@ export const Input = styled.div`
   margin: 0 auto;
   height: 60px;
   max-width: 1200px;
+
+  @media (max-width: 1024px) {
+    max-width: 1000px;
+  }
 
   input {
     width: 100%;
