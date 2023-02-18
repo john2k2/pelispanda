@@ -13,6 +13,8 @@ soup = BeautifulSoup(response.text, 'html.parser')
 # Busca todos los elementos que tengan la clase 'item'
 items = soup.find_all('div', {'class': 'card card--big'})
 
+
+
 # Recorre cada elemento
 for item in items:
     #extrae la imagen
@@ -22,8 +24,12 @@ for item in items:
     rate = item.find('span', {'class': 'card__rate'}).text
     #extrae el titulo
     titulo = item.find('h3', {'class': 'card__title'}).text
+
+    
+
     peliculas.append(
         {
+            'id': str(len(peliculas) + 1),
             'imagen': imagen,
             'titulo': titulo,
             'alt': alt,

@@ -1,5 +1,9 @@
 import React from "react";
-import { Container, ContainerSection } from "../StyleComponent/Main";
+import {
+  Container,
+  ContainerCarrusel,
+  Carrusel,
+} from "../StyleComponent/CarruselStyle";
 import { useState } from "react";
 import CardMovie from "./CardMovie";
 import peliculas from ".././../peliculas.json";
@@ -17,28 +21,29 @@ const Main = () => {
   return (
     <>
       <Container>
-        <ContainerSection>
-          <h1>estrenos</h1>
-          <div>
-            <AiOutlineArrowLeft
-              style={{
-                fontSize: "2rem",
-                color: "rgba(255,255,255,0.75)",
-                cursor: "pointer",
-                marginRight: "1rem",
-              }}
-            />
-            <AiOutlineArrowRight
-              style={{
-                fontSize: "2rem",
-                color: "rgba(255,255,255,0.75)",
-                cursor: "pointer",
-                marginLeft: "1rem",
-              }}
-            />
-          </div>
-        </ContainerSection>
+        <h1>estrenos</h1>
         <div>
+          <AiOutlineArrowLeft
+            style={{
+              fontSize: "2rem",
+              color: "rgba(255,255,255,0.75)",
+              cursor: "pointer",
+              marginRight: "1rem",
+            }}
+          />
+          <AiOutlineArrowRight
+            style={{
+              fontSize: "2rem",
+              color: "rgba(255,255,255,0.75)",
+              cursor: "pointer",
+              marginLeft: "1rem",
+            }}
+          />
+        </div>
+      </Container>
+      <div />
+      <ContainerCarrusel>
+        <Carrusel>
           {peliculas.map((pelicula) => (
             <CardMovie
               key={pelicula.id}
@@ -49,9 +54,9 @@ const Main = () => {
               alt={pelicula.alt}
             />
           ))}
-        </div>
-      </Container>
-      ;
+        </Carrusel>
+      </ContainerCarrusel>
+      <div />;
     </>
   );
 };

@@ -1,22 +1,31 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
-  margin: 0;
-  padding: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
   flex-direction: column;
+  align-items: flex-start;
+  min-width: 23%;
+  margin: 5% 1%;
+  overflow-x: hidden;
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    width: 200%;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    text-align: start;
+  }
+  p {
+    font-size: small;
+    font-weight: 300;
+    text-align: start;
+  }
 `;
 
 export const Imagen = styled.img`
-  width: 100px;
+  width: 100%;
+  height: 350px;
   object-fit: cover;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  &:hover {
-    transform: scale(1.05);
-  }
 `;
