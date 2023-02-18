@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, ContainerSection } from "../StyleComponent/Main";
 import { useState } from "react";
+import CardMovie from "./CardMovie";
+import peliculas from ".././../peliculas.json";
 
 //icons
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
@@ -36,6 +38,18 @@ const Main = () => {
             />
           </div>
         </ContainerSection>
+        <div>
+          {peliculas.map((pelicula) => (
+            <CardMovie
+              key={pelicula.id}
+              titulo={pelicula.titulo}
+              categoria={pelicula.categoria}
+              puntaje={pelicula.puntaje}
+              imagen={pelicula.imagen}
+              alt={pelicula.alt}
+            />
+          ))}
+        </div>
       </Container>
       ;
     </>
